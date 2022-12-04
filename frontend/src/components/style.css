@@ -3,7 +3,7 @@
     justify-content: center;
     background-color: #2192FF;
     color: #fff;
-    height: 40px;
+    height: 45px;
 }
 
 .header-flex,
@@ -29,7 +29,6 @@
 
 /*  Event card  */
 
-
 .card-container{
     box-shadow: 2px 2px 5px #dddddd, -2px -2px 5px #dddddd;
     padding: 12px;
@@ -52,12 +51,12 @@
 }
 
 .card-container #date span{
-    color: #5900ff;
+    color: #009EFF;
 }
 
 .card-container #desc{
     margin: 12px 0;
-    color: grey;
+    color: #222222;
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -88,6 +87,7 @@
 
 .card-container button{
     margin-top: 16px;
+    
 }
 
 
