@@ -52,7 +52,6 @@ const Events = () => {
         return <p>Loading...</p>
     }
 
-    // console.log(bookings)
 
     return (
         <div className="view-container">

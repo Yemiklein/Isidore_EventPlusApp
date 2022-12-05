@@ -11,6 +11,18 @@ mutation($name: String!, $description: String!, $price: Int!, $date: String!, $c
   }
 `
 
+export const DELETE_EVENT = gql`
+mutation($id: ID!){
+    deleteEvent(id: $id){
+        name
+        description
+        date
+        price
+      }
+  }
+`
+
+
 export const GET_EVENTS = gql`
   {
     events{
@@ -62,7 +74,6 @@ query Login($email: String!, $password: String!){
   }
 }
 `
-
 
 export const GET_BOOKED_EVENTS = gql`
 query Booking($userId: ID!){

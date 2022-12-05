@@ -4,6 +4,7 @@ import {
   BOOK_EVENT,
   CANCEL_BOOK_EVENT,
   GET_BOOKED_EVENTS,
+  DELETE_EVENT,
 } from "../queries/Queries";
 import { AppContext } from "../utils/AppContext";
 
@@ -13,6 +14,7 @@ const EventCard = (props) => {
 
   const [createBooking] = useMutation(BOOK_EVENT);
   const [cancelBooking] = useMutation(CANCEL_BOOK_EVENT);
+  const [deleteEvent] = useMutation(DELETE_EVENT);
 
   const cancelBookingEvent = () => {
     cancelBooking({
@@ -26,6 +28,17 @@ const EventCard = (props) => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+
+const delEvent = () => {
+    deleteEvent({
+      variables: {
+        id: event.id,
+      },
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
 
   const bookEvent = () => {
     createBooking({
@@ -66,7 +79,8 @@ const EventCard = (props) => {
           Cancel Booking
         </button>
       ) : selected === "user" ? (
-        <button className="secondary-btn">Delete Event</button>
+        <button className="secondary-btn" onClick={delEvent}>
+          Delete Event</button>
       ) : booked && booked.includes(event.id) ? (
         <button className="secondary-btn" onClick={() => setSelected("booked")}>
           View Booking
